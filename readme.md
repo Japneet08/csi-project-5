@@ -172,41 +172,7 @@ npm install -g nodemon
 nodemon app.js
 ```
 
-## Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/new-feature`)
-5. Create a Pull Request
 
-## Known Issues
 
-- Error handling could be improved
-- No input validation on frontend
-- Limited user feedback for actions
-- No password reset functionality
 
-## Future Enhancements
-
-- [ ] Add user profile pictures
-- [ ] Implement followers/following system
-- [ ] Add comments on posts
-- [ ] Real-time notifications
-- [ ] Image upload for posts
-- [ ] Search functionality
-- [ ] Email verification
-- [ ] Password reset functionality
-- [ ] Admin panel
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For questions or support, please contact [your-email@example.com]
-
----
-
-**Note**: This is a basic social media application intended for learning purposes. For production use, additional security measures and features should be implemented.
