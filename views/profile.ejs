@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="py-5 bg-zinc-900">
+  <div class="text-white">
+  <div class="w-full flex gap-10 items-start justify-center">
+
+    <div class="h-4/5 w-2/5  px-2 bg-zinc-800 rounded-lg text-white flex flex-col gap-4 py-4 items-center justify-center mt-5">
+      <h1 class="text-2xl">Welcome <%=user.name%> 😉</h1>
+
+      <h5>You can create a new post 🖊️</h5>
+      <form action="/abc" method="post" class="flex flex-col justify-center items-center w-4/5">
+        <textarea class="resize-none w-full h-40 bg-transparent border-2  outline-none rounded-lg p-2 " placeholder="Whats on your mind 🤔 ?" name="postdata"></textarea>
+        <div class="flex w-full flex-row justify-between gap-3">
+        <input class="bg-green-600 rounded-md w-36 px-3 py-2 mt-4" type="submit" value="Create New Post">
+        <a class="bg-red-600 rounded-md w-32 px-3 py-2 mt-4 text-center" href="/logout">logout</a>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="w-full h-full  text-center mt-10 flex justify-center items-center flex-col">
+    <h3 class="text-3xl mb-4">Your Posts ✍️</h3>
+    <div class="container w-full  px-10 flex flex-wrap mt-5 justify-center">
+      <%user.posts.forEach((post)=>{ %>
+        <div class="post w-64 border-2 border-zinc-800 rounded-lg text-left bg-zinc-800 p-3 m-2">
+          <h4 class="text-sm text-blue-400"><%=user.username%></h4>
+          <p class="mt-2 text-sm tracking-tight"><%=post.content%></p>
+          <div class="btns flex mt-3 justify-evenly">
+            <span class="bg-pink-300 rounded-lg px-1 py-1 text-black">💜: <%=post.likes.length%></span>
+            <a class="bg-blue-500 rounded-lg px-3 py-1" href="/like/<%=post._id%>"><%=(post.likes.indexOf(user._id)===-1)?"👍" : "👎"%></a>
+            <a class="bg-yellow-500 rounded-lg px-3 py-1" href="/edit/<%=post._id%>">🖊️</a>
+            <a class="bg-red-500 rounded-lg px-3 py-1" href="/delete/<%=post._id%>">🗑️</a>
+          </div>
+        </div>
+
+      <%})%>
+     
+    </div>
+  </div>
+
+</div>
+  </body>
+</html>

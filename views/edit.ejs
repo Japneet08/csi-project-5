@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="py-5 bg-zinc-900">
+  
+  <div class="w-full flex gap-10 items-start justify-center">
+
+    <div class="h-4/5 w-2/5  px-2 bg-zinc-800 rounded-lg text-white flex flex-col gap-4 py-4 items-center justify-center mt-5">
+      <h1 class="text-2xl">Hey <%=post.user.name%>🙋‍♀️</h1>
+
+      <h5>You can Edit your post 🖊️</h5>
+      <form action="/edit/<%=post._id%>" method="post" class="flex flex-col justify-center items-center w-4/5">
+        <textarea class="resize-none w-full h-40 bg-transparent border-2  outline-none rounded-lg p-2 " placeholder="Whats on your mind 🤔 ?" name="postdata" ><%=post.content%></textarea>
+        <div class="flex w-full flex-row justify-between gap-3">
+        <input class="bg-green-600 rounded-md w-36 px-3 py-2 mt-4" type="submit" value="Save Changes">
+        <a class="bg-red-600 rounded-md w-32 px-3 py-2 mt-4 text-center" href="/profile">Cancel</a>
+      </div>
+      </form>
+    </div>
+  </div>
+  
+
+
+  </body>
+</html>
